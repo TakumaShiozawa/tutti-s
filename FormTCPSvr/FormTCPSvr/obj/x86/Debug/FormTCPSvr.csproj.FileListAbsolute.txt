@@ -1,0 +1,7 @@
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\bin\Debug\FormTCPSvr.exe
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\bin\Debug\FormTCPSvr.pdb
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.Form1.resources
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.Properties.Resources.resources
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.csproj.GenerateResource.Cache
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.exe
+C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.pdb
