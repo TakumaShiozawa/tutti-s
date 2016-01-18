@@ -12,4 +12,3 @@ C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPSvr\FormTCPSvr\bin\Debug\FormTC
 C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.Form1.resources
 C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.Properties.Resources.resources
 C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.csproj.GenerateResource.Cache
-C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPSvr\FormTCPSvr\obj\x86\Debug\FormTCPSvr.csprojResolveAssemblyReference.cache

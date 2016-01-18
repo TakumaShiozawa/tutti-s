@@ -6,6 +6,7 @@
  * 2016年1月17日 10:17 追記　画面整理、複数行の入力実装、
  * 　　　　　　　　　　　　　チャットに時間と送った側の名前を追加
  * 2016年1月17日 10:35 追記　コメント追加
+ * 2016年1月17日 12:45 例外処理とか改変
  * 
  */
 
@@ -67,10 +68,15 @@ namespace FormTCPCry2
                 ns.WriteTimeout = 10000;
                 socet = true;
             }
-            catch (System.Net.Sockets.SocketException ex)
+            catch (FormatException)//入力がおかしい
             {
-                MessageBox.Show(ex.ToString()+"\nサーバー側の準備ができていません", "エラー");
+                MessageBox.Show("IPアドレス、ポート番号を正しく入力してください(半角)", "エラー");
             }
+            catch (System.Net.Sockets.SocketException)//
+            {
+                MessageBox.Show("Serverと接続できませんでした", "エラー");
+            }
+            
         }
 
         //切断ボタン
@@ -122,6 +128,13 @@ namespace FormTCPCry2
             catch (Exception)
             {
                 MessageBox.Show("接続されていません。","エラー");
+                textBox1.Text += "―メッセージを送れませんでした―\r\n";
+                //カレット位置を末尾に移動
+                textBox1.SelectionStart = textBox1.Text.Length;
+                //テキストボックスにフォーカスを移動
+                textBox1.Focus();
+                //カレット位置までスクロール
+                textBox1.ScrollToCaret();
             }  
         }
 

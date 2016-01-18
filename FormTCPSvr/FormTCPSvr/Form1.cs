@@ -6,6 +6,7 @@
  * 2016年1月17日 10:17 追記　画面整理、複数行の入力実装、
  * 　　　　　　　　　　　　　チャットに時間と送った側の名前を追加
  * 2016年1月17日 10:35 追記　コメント追加
+ * 2016年1月17日 12:45 例外処理とか改変
  * 
  */
 
@@ -38,42 +39,49 @@ namespace FormTCPSvr
         {
             if (socet == false)//つながってないなら
             {
-                //ListenするIPアドレス
-                //string ipString = "127.0.0.1";
-                string ipString = textBox3.Text;
-                System.Net.IPAddress ipAdd = System.Net.IPAddress.Parse(ipString);
+                try
+                {
+                    //ListenするIPアドレス
+                    //string ipString = "127.0.0.1";
+                    string ipString = textBox3.Text;
+                    System.Net.IPAddress ipAdd = System.Net.IPAddress.Parse(ipString);
 
-                //ホスト名からIPアドレスを取得する時は、次のようにする
-                //string host = "localhost";
-                //System.Net.IPAddress ipAdd =
-                //    System.Net.Dns.GetHostEntry(host).AddressList[0];
-                //.NET Framework 1.1以前では、以下のようにする
-                //System.Net.IPAddress ipAdd =
-                //    System.Net.Dns.Resolve(host).AddressList[0];
+                    //ホスト名からIPアドレスを取得する時は、次のようにする
+                    //string host = "localhost";
+                    //System.Net.IPAddress ipAdd =
+                    //    System.Net.Dns.GetHostEntry(host).AddressList[0];
+                    //.NET Framework 1.1以前では、以下のようにする
+                    //System.Net.IPAddress ipAdd =
+                    //    System.Net.Dns.Resolve(host).AddressList[0];
 
-                //Listenするポート番号
-                int port = int.Parse(textBox4.Text);
+                    //Listenするポート番号
+                    int port = int.Parse(textBox4.Text);
 
-                //TcpListenerオブジェクトを作成する
-                listener = new System.Net.Sockets.TcpListener(ipAdd, port);
+                    //TcpListenerオブジェクトを作成する
+                    listener = new System.Net.Sockets.TcpListener(ipAdd, port);
 
-                //Listenを開始する
-                listener.Start();
-                label1.Text = "Listenを開始しました(" + ((System.Net.IPEndPoint)listener.LocalEndpoint).Address + ":" + ((System.Net.IPEndPoint)listener.LocalEndpoint).Port + ")。";
+                    //Listenを開始する
+                    listener.Start();
+                    label1.Text = "Listenを開始しました(" + ((System.Net.IPEndPoint)listener.LocalEndpoint).Address + ":" + ((System.Net.IPEndPoint)listener.LocalEndpoint).Port + ")。";
 
-                //接続要求があったら受け入れる
-                client = listener.AcceptTcpClient();
-                label1.Text = "クライアント(" + ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address + ":" + ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Port + ")と接続しました。";
+                    //接続要求があったら受け入れる
+                    client = listener.AcceptTcpClient();
+                    label1.Text = "クライアント(" + ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Address + ":" + ((System.Net.IPEndPoint)client.Client.RemoteEndPoint).Port + ")と接続しました。";
 
-                //NetworkStreamを取得
-                ns = client.GetStream();
+                    //NetworkStreamを取得
+                    ns = client.GetStream();
 
-                //読み取り、書き込みのタイムアウトを10秒にする
-                //デフォルトはInfiniteで、タイムアウトしない
-                //(.NET Framework 2.0以上が必要)
-                ns.ReadTimeout = 10000;
-                ns.WriteTimeout = 10000;
-                socet = true;
+                    //読み取り、書き込みのタイムアウトを10秒にする
+                    //デフォルトはInfiniteで、タイムアウトしない
+                    //(.NET Framework 2.0以上が必要)
+                    ns.ReadTimeout = 10000;
+                    ns.WriteTimeout = 10000;
+                    socet = true;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("IPアドレス、ポート番号を正しく入力してください(半角)", "エラー");
+                }
             }
 
            
@@ -81,7 +89,7 @@ namespace FormTCPSvr
         //切断ボタン
         private void button2_Click(object sender, EventArgs e)
         {
-            if (socet = true)
+            if (socet == true)
             {
                 //閉じる
                 ns.Close();
@@ -129,6 +137,13 @@ namespace FormTCPSvr
             catch (Exception a)
             {
                 MessageBox.Show("接続されていません。", "エラー");
+                textBox1.Text += "―メッセージを送れませんでした―\r\n";
+                //カレット位置を末尾に移動
+                textBox1.SelectionStart = textBox1.Text.Length;
+                //テキストボックスにフォーカスを移動
+                textBox1.Focus();
+                //カレット位置までスクロール
+                textBox1.ScrollToCaret();
             }
         }
 
