@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * 参考：http://dobon.net/vb/dotnet/internet/tcpclientserver.html 
+ * 
+ * 2016年1月16日　作成
+ * 2016年1月17日 08:00 追記　動作するまで
+ * 2016年1月17日 10:17 追記　画面整理、複数行の入力実装、
+ * 　　　　　　　　　　　　　チャットに時間と送った側の名前を追加
+ * 2016年1月17日 10:35 追記　コメント追加
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +30,10 @@ namespace FormTCPCry2
             InitializeComponent();
             //垂直、水平両方のスクロールバーを表示"
             textBox1.ScrollBars = ScrollBars.Both;
-            socet = false;
+            socet = false;//通信ができたら(つながったら)
         }
 
+        //接続ボタン
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -61,6 +73,7 @@ namespace FormTCPCry2
             }
         }
 
+        //切断ボタン
         private void button2_Click(object sender, EventArgs e)
         {
             if(ns!=null){
@@ -73,6 +86,7 @@ namespace FormTCPCry2
             }
         }
 
+        //送信ボタン
         private void button3_Click(object sender, EventArgs e)
         {
             try
@@ -112,11 +126,10 @@ namespace FormTCPCry2
             
         }
 
-        
-
+        //1秒ごとにデータを受信(データがあれば)
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (socet && tcp.Available > 0)
+            if (socet && tcp.Available > 0)//通信ができていて、Serverから何か来てれば
             {
                 //サーバーから送られたデータを受信する
                 System.IO.MemoryStream ms = new System.IO.MemoryStream();
