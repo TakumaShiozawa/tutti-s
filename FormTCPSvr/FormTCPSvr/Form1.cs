@@ -150,7 +150,7 @@ namespace FormTCPSvr
         //1秒ごとに受信
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (socet)
+            if (socet && client.Available > 0)
             {
                 
                 try
