@@ -93,7 +93,7 @@ namespace FormTCPSvr
                 {
                     //クライアントにデータを送信する
                     //クライアントに送信する文字列を作成
-                    string sendMsg = textBox2.Text + "\r\n";
+                    string sendMsg = "[Server]" + DateTime.Now.ToString() + "\r\n" + textBox2.Text + "\r\n\r\n";
                     //文字列をByte型配列に変換
                     System.Text.Encoding enc = System.Text.Encoding.UTF8;
                     byte[] sendBytes = enc.GetBytes(sendMsg + '\n');
@@ -101,6 +101,13 @@ namespace FormTCPSvr
                     ns.Write(sendBytes, 0, sendBytes.Length);
                     textBox1.Text += sendMsg;
                     Console.WriteLine(sendMsg);
+
+                    //カレット位置を末尾に移動
+                    textBox1.SelectionStart = textBox1.Text.Length;
+                    //テキストボックスにフォーカスを移動
+                    textBox1.Focus();
+                    //カレット位置までスクロール
+                    textBox1.ScrollToCaret();
                 }
             }
             catch (NullReferenceException)
@@ -147,6 +154,12 @@ namespace FormTCPSvr
                     resMsg = resMsg.TrimEnd('\n');
                     //Console.WriteLine(resMsg);
                     textBox1.Text +=resMsg+"\r\n";
+                    //カレット位置を末尾に移動
+                    textBox1.SelectionStart = textBox1.Text.Length;
+                    //テキストボックスにフォーカスを移動
+                    textBox1.Focus();
+                    //カレット位置までスクロール
+                    textBox1.ScrollToCaret();
                 }
                 catch (ObjectDisposedException ex)
                 {
