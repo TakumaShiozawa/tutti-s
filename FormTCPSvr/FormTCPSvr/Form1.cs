@@ -82,6 +82,10 @@ namespace FormTCPSvr
                 {
                     MessageBox.Show("IPアドレス、ポート番号を正しく入力してください(半角)", "エラー");
                 }
+                catch (System.Net.Sockets.SocketException ER)
+                {
+                    MessageBox.Show("IPアドレスが間違ってます。\ncmd.exeで調べてください\n(ipconfig)", "エラー");
+                }
             }
 
            
