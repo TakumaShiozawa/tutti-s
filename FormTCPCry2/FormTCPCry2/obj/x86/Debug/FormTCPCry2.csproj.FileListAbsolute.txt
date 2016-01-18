@@ -5,3 +5,10 @@ C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPCry2\FormTCPCry2\o
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.csproj.GenerateResource.Cache
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.exe
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.pdb
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.exe
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.pdb
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\bin\Debug\FormTCPCry2.exe
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\bin\Debug\FormTCPCry2.pdb
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.Form1.resources
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.Properties.Resources.resources
+C:\Users\1323009\Documents\GitHub\tutti-s\FormTCPCry2\FormTCPCry2\obj\x86\Debug\FormTCPCry2.csproj.GenerateResource.Cache

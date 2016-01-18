@@ -82,7 +82,7 @@ namespace FormTCPCry2
                 //string sendMsg = Console.ReadLine();
 
                 //メッセージ取得
-                string sendMsg = textBox2.Text + "\r\n";
+                string sendMsg = "[Client]" + DateTime.Now.ToString() + "\r\n" + textBox2.Text + "\r\n\r\n";
 
                 //何も入力されなかった時は終了
                 if (sendMsg == null || sendMsg.Length == 0)
@@ -98,6 +98,12 @@ namespace FormTCPCry2
                 ns.Write(sendBytes, 0, sendBytes.Length);
                 textBox1.Text += sendMsg;
                 Console.WriteLine(sendMsg);
+                //カレット位置を末尾に移動
+                textBox1.SelectionStart = textBox1.Text.Length;
+                //テキストボックスにフォーカスを移動
+                textBox1.Focus();
+                //カレット位置までスクロール
+                textBox1.ScrollToCaret();
             }
             catch (NullReferenceException)
             {
@@ -139,7 +145,16 @@ namespace FormTCPCry2
                 resMsg = resMsg.TrimEnd('\n');
                 Console.WriteLine(resMsg);
                 textBox1.Text += resMsg+"\r\n";
+                //カレット位置を末尾に移動
+                textBox1.SelectionStart = textBox1.Text.Length;
+                //テキストボックスにフォーカスを移動
+                textBox1.Focus();
+                //カレット位置までスクロール
+                textBox1.ScrollToCaret();
             }
         }
+
+       
+
     }
 }
