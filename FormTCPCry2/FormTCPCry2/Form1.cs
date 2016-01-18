@@ -117,7 +117,7 @@ namespace FormTCPCry2
                 //データを送信する
                 ns.Write(sendBytes, 0, sendBytes.Length);
                 textBox1.Text += sendMsg;
-                Console.WriteLine(sendMsg);
+                //Console.WriteLine(sendMsg);
                 //カレット位置を末尾に移動
                 textBox1.SelectionStart = textBox1.Text.Length;
                 //テキストボックスにフォーカスを移動
@@ -128,7 +128,7 @@ namespace FormTCPCry2
             catch (Exception)
             {
                 MessageBox.Show("接続されていません。","エラー");
-                textBox1.Text += "―メッセージを送れませんでした―\r\n";
+                textBox1.Text += "―メッセージを送れませんでした―[" + textBox2.Text + "]\r\n";
                 //カレット位置を末尾に移動
                 textBox1.SelectionStart = textBox1.Text.Length;
                 //テキストボックスにフォーカスを移動
@@ -167,9 +167,9 @@ namespace FormTCPCry2
                 string resMsg = enc.GetString(ms.GetBuffer(), 0, (int)ms.Length);
                 ms.Close();
                 //末尾の\nを削除
-                resMsg = resMsg.TrimEnd('\n');
-                Console.WriteLine(resMsg);
-                textBox1.Text += resMsg+"\r\n";
+                //resMsg = resMsg.TrimEnd('\n');
+                //Console.WriteLine(resMsg);
+                textBox1.Text += resMsg;
                 //カレット位置を末尾に移動
                 textBox1.SelectionStart = textBox1.Text.Length;
                 //テキストボックスにフォーカスを移動

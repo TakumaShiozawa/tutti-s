@@ -6,7 +6,7 @@
  * 2016年1月17日 10:17 追記　画面整理、複数行の入力実装、
  * 　　　　　　　　　　　　　チャットに時間と送った側の名前を追加
  * 2016年1月17日 10:35 追記　コメント追加
- * 2016年1月17日 12:45 例外処理とか改変
+ * 12:45 例外処理とか改変
  * 
  */
 
@@ -137,7 +137,7 @@ namespace FormTCPSvr
             catch (Exception a)
             {
                 MessageBox.Show("接続されていません。", "エラー");
-                textBox1.Text += "―メッセージを送れませんでした―\r\n";
+                textBox1.Text += "―メッセージを送れませんでした―[" + textBox2.Text + "]\r\n";
                 //カレット位置を末尾に移動
                 textBox1.SelectionStart = textBox1.Text.Length;
                 //テキストボックスにフォーカスを移動
@@ -150,7 +150,7 @@ namespace FormTCPSvr
         //1秒ごとに受信
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (socet && client.Available > 0)
+            if (socet)
             {
                 
                 try
@@ -182,9 +182,9 @@ namespace FormTCPSvr
                     string resMsg = enc.GetString(ms.GetBuffer(), 0, (int)ms.Length);
                     ms.Close();
                     //末尾の\nを削除
-                    resMsg = resMsg.TrimEnd('\n');
+                    //resMsg = resMsg.TrimEnd('\n');
                     //Console.WriteLine(resMsg);
-                    textBox1.Text +=resMsg+"\r\n";
+                    textBox1.Text +=resMsg;
                     //カレット位置を末尾に移動
                     textBox1.SelectionStart = textBox1.Text.Length;
                     //テキストボックスにフォーカスを移動
