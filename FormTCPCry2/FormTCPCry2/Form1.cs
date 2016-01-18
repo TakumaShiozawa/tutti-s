@@ -80,8 +80,8 @@ namespace FormTCPCry2
                 //閉じる
                 ns.Close();
                 tcp.Close();
-                Console.WriteLine("切断しました。");
-
+                label1.Text="通信を切断しました。";
+                socet = false;
                 //Console.ReadLine();
             }
         }
@@ -119,11 +119,10 @@ namespace FormTCPCry2
                 //カレット位置までスクロール
                 textBox1.ScrollToCaret();
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
                 MessageBox.Show("接続されていません。","エラー");
-            }
-            
+            }  
         }
 
         //1秒ごとにデータを受信(データがあれば)

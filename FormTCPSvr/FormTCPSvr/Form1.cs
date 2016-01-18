@@ -26,7 +26,7 @@ namespace FormTCPSvr
         System.Net.Sockets.TcpListener listener;
         System.Net.Sockets.NetworkStream ns;
         bool disconnected;
-        bool socet;//通信の経路ができたら
+        bool socet;
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace FormTCPSvr
         //通信開始ボタン(待機状態に)
         private void button1_Click(object sender, EventArgs e)
         {
-            if (ns == null)
+            if (socet == false)//つながってないなら
             {
                 //ListenするIPアドレス
                 //string ipString = "127.0.0.1";
@@ -81,7 +81,7 @@ namespace FormTCPSvr
         //切断ボタン
         private void button2_Click(object sender, EventArgs e)
         {
-            if (ns != null)
+            if (socet = true)
             {
                 //閉じる
                 ns.Close();
@@ -91,6 +91,9 @@ namespace FormTCPSvr
                 //リスナを閉じる
                 listener.Stop();
                 Console.WriteLine("Listenerを閉じました。");
+
+                label1.Text = "クライアントとの接続を閉じました。";
+                socet = false;
 
             }
             //Console.ReadLine();
@@ -123,7 +126,7 @@ namespace FormTCPSvr
                     textBox1.ScrollToCaret();
                 }
             }
-            catch (NullReferenceException)
+            catch (Exception a)
             {
                 MessageBox.Show("接続されていません。", "エラー");
             }
