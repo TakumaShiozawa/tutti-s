@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * 作成日1/25 
+ * 追記：1/26 サーバ、テキストの更新(送信)実装
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

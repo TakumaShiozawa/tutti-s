@@ -9,3 +9,5 @@ C:\Users\1323009\Documents\Visual Studio 2010\Projects\DigitalSignage_Server\Dig
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\DigitalSignage_Server\DigitalSignage_Server\obj\x86\Debug\DigitalSignage_Server.csproj.GenerateResource.Cache
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\DigitalSignage_Server\DigitalSignage_Server\obj\x86\Debug\DigitalSignage_Server.exe
 C:\Users\1323009\Documents\Visual Studio 2010\Projects\DigitalSignage_Server\DigitalSignage_Server\obj\x86\Debug\DigitalSignage_Server.pdb
+C:\Users\1323009\Documents\GitHub\tutti-s\DigitalSignage_Ver3_TCP\DigitalSignage_Server\DigitalSignage_Server\obj\x86\Debug\DigitalSignage_Server.exe
+C:\Users\1323009\Documents\GitHub\tutti-s\DigitalSignage_Ver3_TCP\DigitalSignage_Server\DigitalSignage_Server\obj\x86\Debug\DigitalSignage_Server.pdb
