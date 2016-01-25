@@ -103,9 +103,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         public MainWindow()
         {
             InitializeComponent();
-            backImage1 = new BitmapImage(new Uri("Images/KLspace1.png", UriKind.Relative));//通常時
-            backImage2 = new BitmapImage(new Uri("Images/KLspace2.png", UriKind.Relative));//右から
-            backImage3 = new BitmapImage(new Uri("Images/KLspace3.png", UriKind.Relative));//左から
+            backImage1 = new BitmapImage(new Uri("Images/map.png", UriKind.Relative));//通常時
+            backImage2 = new BitmapImage(new Uri("Images/KLspace3.png", UriKind.Relative));//右から
+            backImage3 = new BitmapImage(new Uri("Images/KLspace1.png", UriKind.Relative));//左から
             stock = 0;//初期化
             side = 0;//初期化
 
@@ -429,7 +429,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event arguments</param>
-
+        /*
         private void CheckBoxSeatedModeChanged(object sender, RoutedEventArgs e)
         {
             if (null != this.sensor)
@@ -444,7 +444,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 }
             }
         }
-
+        */
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
