@@ -108,7 +108,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             backImage3 = new BitmapImage(new Uri("Images/KLspace1.png", UriKind.Relative));//左から
             stock = 0;//初期化
             side = 0;//初期化
-
+            label1.Content = "";
             Image2.Source = backImage1;//通常画面に初期化
         }
 
@@ -284,18 +284,20 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
 
                     //ここから主に改変
-                    label1.Content = side;//デバッグ用
+                    //label1.Content = side;//デバッグ用
                     if (side != stock)//値が変わったら(前の値と今の値で変化があったら)
                     {
                         if (stock == 0)//前の値が人が居ない状態だったら
                         {
                             if (side == 1)
                             {
-                                Image2.Source = backImage2;//右からの画像に変更　
+                                Image2.Source = backImage2;//右からの画像に変更
+                                label1.Content = "進行方向には第3食堂が近いです";
                             }
                             else
                             {
                                 Image2.Source = backImage3;//左からの画像に変更　
+                                label1.Content = "進行方向には第1食堂が近いです";
                             }
                         }
                         else
@@ -303,6 +305,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                             if (side == 0)//前の値が人がいる状態だったら
                             {
                                 Image2.Source = backImage1;//通常画像に戻る
+                                label1.Content = "";
                             }
                         }
                     }
