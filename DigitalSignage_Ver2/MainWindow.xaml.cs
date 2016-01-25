@@ -292,12 +292,12 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                             if (side == 1)
                             {
                                 Image2.Source = backImage2;//右からの画像に変更
-                                label1.Content = "進行方向には第3食堂が近いです";
+                                label1.Content = "進行方向には第3食堂が近いです";//説明
                             }
                             else
                             {
                                 Image2.Source = backImage3;//左からの画像に変更　
-                                label1.Content = "進行方向には第1食堂が近いです";
+                                label1.Content = "進行方向には第1食堂が近いです";//説明
                             }
                         }
                         else
