@@ -6,3 +6,4 @@ Kinect演習　チームA　ツッチーズ
 
 * DigitalSignage_Ver2がデジタルサイネージ 
 
+* DigitalSignage_Ver3_TCP デジタルサイネージ TCP/IP要素追加
